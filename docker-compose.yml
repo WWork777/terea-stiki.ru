@@ -12,10 +12,10 @@ services:
       - LETSENCRYPT_EMAIL=qwe@gmail.com
     networks:
       - web
-     volumes:
+    volumes:
       # Все сайты используют одну и ту же папку с картинками
       - /var/www/iluma-store.ru/images:/app/public/images:ro
-      # - /var/www/terea-stiki.ru/.next:/app/.next
+      # - /var/www/tereamsk.ru/.next:/app/.next
 
 networks:
   web:
