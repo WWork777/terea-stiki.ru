@@ -7,7 +7,7 @@ import PhoneInput from "react-phone-input-2";
 import Link from "next/link";
 
 const CheckoutPage = () => {
-  const [selectedMethod, setSelectedMethod] = useState("pickup");
+  const [selectedMethod, setSelectedMethod] = useState("delivery");
   const [loading, setLoading] = useState(false);
   const {
     cartItems,
@@ -745,11 +745,21 @@ ${formattedCart}
             <h4>Способ доставки</h4>
             <div className="checkout-delivery-method">
               <button
-                type="button"
-                className={selectedMethod === "pickup" ? "active" : ""}
-                onClick={() => setSelectedMethod("pickup")}
+                type='button'
+                className={selectedMethod === 'pickup' ? 'active' : ''}
+                onClick={() => setSelectedMethod('pickup')}
+                disabled={true}
+                style={{
+                  opacity: 0.5,
+                  cursor: 'not-allowed',
+                  position: 'relative',
+                }}
               >
                 Самовывоз
+                <br />
+                <span style={{ fontSize: '14px', color: 'rgb(198, 58, 58)' }}>
+                  Недоступен
+                </span>
               </button>
               {onlyPacksAndBlocks && totalQuantity < 10 && !hasBlock ? (
                 <button type="button" className={selectedMethod} disabled>
