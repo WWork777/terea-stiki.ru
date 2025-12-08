@@ -1,14 +1,14 @@
-'use client'
-import { useEffect, useState } from 'react';
-import './BlockModal.scss';
+"use client";
+import { useEffect, useState } from "react";
+import "./BlockModal.scss";
 
 const BlockModal = ({ allowClose = false }) => {
   const [isVisible, setIsVisible] = useState(true);
-  
+
   useEffect(() => {
-    document.body.style.overflow = isVisible ? 'hidden' : 'auto';
+    document.body.style.overflow = isVisible ? "hidden" : "auto";
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [isVisible]);
 
@@ -17,8 +17,8 @@ const BlockModal = ({ allowClose = false }) => {
   return (
     <div className="modalOverlay">
       <div className="modalContent">
-		{allowClose && (
-          <button 
+        {allowClose && (
+          <button
             className="closeButton"
             onClick={() => setIsVisible(false)}
             aria-label="Закрыть уведомление"
@@ -27,7 +27,10 @@ const BlockModal = ({ allowClose = false }) => {
           </button>
         )}
         <h2>Сайт временно не работает</h2>
-        <p>Сегодня 23.08 наш магазин по техническим причинам не работает. Принимаем заказы на завтра и желаем всем отличного дня! </p>
+        <p>
+          Сегодня 08.12 наш магазин по техническим причинам не работает.
+          Принимаем заказы после 14:00{" "}
+        </p>
       </div>
     </div>
   );
