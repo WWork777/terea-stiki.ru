@@ -23,6 +23,7 @@ const CheckoutPage = () => {
   const [formData, setFormData] = useState({
     lastName: "",
     phoneNumber: "",
+    telegram: "",
     city: "",
     streetAddress: "",
     privacyConsent: false,
@@ -51,6 +52,14 @@ const CheckoutPage = () => {
       newErrors.phoneNumber = "Введите номер телефона";
     } else if (formData.phoneNumber.replace(/\D/g, "").length < 11) {
       newErrors.phoneNumber = "Некорректный номер телефона";
+    }
+
+    // Валидация Telegram (необязательное поле, но если заполнено - проверяем формат)
+    if (
+      formData.telegram.trim() &&
+      !/^[@a-zA-Z0-9_]{5,32}$/.test(formData.telegram.replace(/^@/, ""))
+    ) {
+      newErrors.telegram = "Некорректный формат Telegram username";
     }
 
     if (selectedMethod === "delivery") {
@@ -614,11 +623,19 @@ const CheckoutPage = () => {
         )
         .join("\n");
 
+      // Форматируем Telegram username (добавляем @ если его нет)
+      const telegramUsername = formData.telegram.trim()
+        ? formData.telegram.startsWith("@")
+          ? formData.telegram
+          : `@${formData.telegram}`
+        : "не указан";
+
       const message = `
 Заказ с сайта ${site}
 
 Имя: ${formData.lastName}   
 Телефон: +${formData.phoneNumber}
+Telegram: ${telegramUsername}
 Способ доставки: ${selectedMethod === "delivery" ? "Доставка" : "Самовывоз"}
 ${
   selectedMethod === "delivery"
@@ -727,6 +744,19 @@ ${formattedCart}
             {errors.lastName && (
               <p className="error" style={{ color: "red" }}>
                 {errors.lastName}
+              </p>
+            )}
+
+            <input
+              type="text"
+              name="telegram"
+              placeholder="Telegram username (необязательно)"
+              value={formData.telegram}
+              onChange={handleInputChange}
+            />
+            {errors.telegram && (
+              <p className="error" style={{ color: "red" }}>
+                {errors.telegram}
               </p>
             )}
 
