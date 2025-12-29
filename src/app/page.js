@@ -1,6 +1,7 @@
 import Image from "next/image";
 import "./main.scss";
 import Preview from "../../components/Home/Preview/Preview";
+import ModalManager from "../../components/ModalManager/ModalManager";
 // import Exclusive from "../../components/Home/Exclusive/Exclusive";
 
 export const metadata = {
@@ -31,7 +32,9 @@ export default function Home() {
         <Preview />
         {/* <h2>Популярное</h2>
         <Exclusive /> */}
+        
       </div>
+      <ModalManager/>
     </>
   );
 }
