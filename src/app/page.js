@@ -32,9 +32,8 @@ export default function Home() {
         <Preview />
         {/* <h2>Популярное</h2>
         <Exclusive /> */}
-        
       </div>
-      <ModalManager/>
+      {/* <ModalManager/> */}
     </>
   );
 }
