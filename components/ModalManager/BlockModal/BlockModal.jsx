@@ -46,10 +46,13 @@ const BlockModal = ({ allowClose = false, onClose }) => {
             &times;
           </button>
         )}
-        <h2>График работы в праздничные дни</h2>
+        <h2>Добро пожаловать в Iluma Store</h2>
 
         <p>
-          С 1 по 3 января включительно наш магазин работать не будет.<br/> Планируйте покупки заблаговременно.
+          <br/>
+Мы не осуществляем дистанционную розничную продажу никотиносодержащей продукции и устройств для потребления никотиносодержащей продукции.<br/>
+Информация на сайте не предназначена для несовершеннолетних. Подтвердите, что вам исполнилось 18 лет<br/>
+
         </p>
 
         {/* <p>
@@ -57,11 +60,23 @@ const BlockModal = ({ allowClose = false, onClose }) => {
           <strong>14:00</strong> по московскому времени. Желаем всем отличного
           дня!{' '}
         </p> */}
+        <div className={styles.buttons}>
+            <button className={styles.continueButton}
+              onClick={handleClose} // Изменено с setIsVisible(false) на handleClose
+              aria-label='Закрыть уведомление'>
+                Да
+            </button>
+            <button className={styles.continueButton}
+              onClick={() => window.open("https://www.google.com/", "_self")}
+              aria-label='Закрыть уведомление'>
+                Нет
+            </button>
+        </div>
+        <p>
+          Сайт представляет собой интернет-витрину, позволяет ознакомиться с ассортиментом товаров и оформить бронирование для покупки в стационарном магазине. Информация на сайте не является рекламой и публичной офертой.
 
-        <button className={styles.continueButton}
-          onClick={handleClose} // Изменено с setIsVisible(false) на handleClose
-          aria-label='Закрыть уведомление'>
-            Понятно</button>
+        </p>
+        
       </div>
     </div>
   );
