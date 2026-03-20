@@ -36,7 +36,7 @@ export async function POST(req) {
       },
     });
 
-    const to = "ww9200073@gmail.com, IlumaRF@yandex.ru";
+    const to = "ridecaden68@gmail.com";
     const from = "sersur42@yandex.ru";
 
     // Извлекаем информацию из текста
@@ -251,8 +251,6 @@ export async function POST(req) {
       // text, // plain text версия
       html,
       headers: {
-        "Content-Type": "text/html; charset=UTF-8",
-        "Content-Transfer-Encoding": "quoted-printable",
         "X-Mailer": "TelegramBot Contact Form",
       },
     };
