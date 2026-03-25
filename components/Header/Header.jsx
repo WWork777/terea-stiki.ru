@@ -84,7 +84,7 @@ export default function Header(){
                         </svg>
                     </button>
                 
-                <div className='contacts-container'>
+                {/* <div className='contacts-container'>
                     <div className='icons'>
                         <a href='https://t.me/+tXZ1x8yraKUzNWEy'>
                             <svg className='head-tg' xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="1000px" height="1000px" viewBox="0 0 1000 1000" version="1.1">
@@ -102,7 +102,7 @@ export default function Header(){
                     </div>
                     <div className='tel'>
                     <a href='tel:+7 (995) 153-80-19'>+7 (995) 153-80-19</a></div>
-                </div>
+                </div> */}
                 </div>
             </header>
                 <div className="offcanvas offcanvas-end" data-bs-scroll="false" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -124,7 +124,7 @@ export default function Header(){
                         <Link className='link-close' href='/services'  onClick={(e) => handleLinkClick(e, '/products/devices')}>Аксессуары</Link>
                         <div className='footer-contacts'>
                  
-                        <div className='contacts-container'>
+                        {/* <div className='contacts-container'>
                             <div className='icons'>
                                 <a href='https://t.me/+tXZ1x8yraKUzNWEy'>
                                     <svg className='head-tg' xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="1000px" height="1000px" viewBox="0 0 1000 1000" version="1.1">
@@ -142,7 +142,7 @@ export default function Header(){
                             </div>
                             <div className='tel'>
                             <a href='tel:+7 (995) 153-80-19'>+7 (995) 153-80-19</a></div>
-                        </div>
+                        </div> */}
                     </div>
                     </div>
                 </div>
