@@ -35,7 +35,7 @@ export default function Home() {
         <Exclusive /> */}
       </div>
 
-      <BlockModal />
+      {/* <BlockModal /> */}
       {/* <ModalManager/> */}
     </>
   );
